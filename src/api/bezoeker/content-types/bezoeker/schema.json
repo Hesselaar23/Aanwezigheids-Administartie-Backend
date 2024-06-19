@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bezoekers",
+  "info": {
+    "singularName": "bezoeker",
+    "pluralName": "bezoekers",
+    "displayName": "Bezoeker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "aangemeld",
+        "afgemeld"
+      ],
+      "default": "aangemeld"
+    },
+    "voornaam": {
+      "type": "string",
+      "required": true
+    },
+    "tussenvoegsels": {
+      "type": "string"
+    },
+    "achternaam": {
+      "type": "string",
+      "required": true
+    },
+    "bedrijf": {
+      "type": "string"
+    },
+    "aangemeldom": {
+      "type": "datetime",
+      "required": true
+    },
+    "afgemeldom": {
+      "type": "datetime"
+    },
+    "medewerker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medewerker.medewerker",
+      "inversedBy": "bezoekers"
+    }
+  }
+}
